@@ -46,7 +46,7 @@ const NoteState = (props) => {
         'auth-token': localStorage.getItem('token'),
       },
     });
-    const json = response.json();
+
     const newNotes = notes.filter((note) => {
       return note._id !== id;
     });
@@ -63,7 +63,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-    const json = response.json();
+
     let newNote = JSON.parse(JSON.stringify(notes));
     // Logic to edit in client
     for (let index = 0; index < newNote.length; index++) {
